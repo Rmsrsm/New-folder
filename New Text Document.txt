@@ -62,15 +62,16 @@ function sellBook(title, quantity, balance) {
   }
 }
 function displayBooks() {
-  console.log("معلومات الكتب:");
-for (let book of books) {
-    console.log(`
+    console.log("معلومات الكتب:");
+    for (let book of books) {
+        console.log(`
 العنوان: ${book.title}
 المؤلف: ${book.author}
 السعر: ${book.price}
 الكمية: ${book.quantity}
 رقم المنتج: ${book.id}
 `)
+    }
 }
 
 
@@ -80,4 +81,4 @@ addBook(6, "The Pragmatic Programmer", "David Thomas", 55.0, 15);
 displayBooks();
 
 sellBook("Clean Code", 2, 1000);
-displayBooks();
+    displayBooks();
