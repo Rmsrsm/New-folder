@@ -30,3 +30,34 @@ let books = [{
     quantity: 9 
 }
 ];
+
+const addBook = (id, title, author, price, quantity) => {
+  books.push({ id, title, author, price, quantity });
+}
+
+
+
+function searchBook(title) {
+  for (let book of books) {
+    if (book.title.includes(title)) {
+      return book;
+    }
+  }
+  return null;
+}
+
+
+
+
+function sellBook(title, quantity, balance) {
+  let book = searchBook(title);
+
+  if (book && book.quantity >= quantity && balance >= book.price * quantity) {
+
+    book.quantity -= quantity;
+    balance -= book.price * quantity;
+    console.log(`تم بيع ${quantity} نسخة من ${book.title}. الرصيد المتبقي: ${balance}`);
+  } else {
+    console.log("تحقق من توفر الكتاب والكمية والرصيد");
+  }
+}
